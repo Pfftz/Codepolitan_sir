@@ -46,6 +46,31 @@
             <input type="submit">
         </div>
     </form>
+    <hr>
+    <h1>market ngawi</h1>
+    <form action="/order">
+        <label for="">Baju</label>
+        <div>
+            <input type="radio" name="baju" id="" value="kemeja ngawi" checked><label for="">kemeja ngawi</label>
+            <input type="radio" name="baju" id="" value="jaket ngawi"><label for="">jaket ngawi</label>
+        </div>
+        <div>
+            <label for="ukur">ukuran</label>
+            <select name="ukur" id="ukur">
+                <option>-</option>
+                <option value="XS">Xtra Small</option>
+                <option value="S">Small</option>
+                <option value="M" selected>Medium</option>
+                <option value="L">Large</option>
+                <option value="XL">Xtra Large</option>
+            </select>
+        </div>
+        <div>
+            <label for="term">Sesuai Pesanan?</label>
+            <input type="checkbox" name="term" id="term" checked>
+        </div>
+        <button type="submit">order</button>
+    </form>
 </body>
 
 </html>
