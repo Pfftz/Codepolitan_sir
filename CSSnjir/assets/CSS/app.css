@@ -1,5 +1,5 @@
 h1{
-    color: dodgerblue;
+    color: rgba(rgb(160, 233, 42), rgb(51, 160, 51), rgb(75, 75, 189), alpha);
 }
 button{
     color: darkmagenta;
@@ -7,5 +7,5 @@ button{
 }
 p{
     color: darkorange;
-    background-color: darkslategray;
+    background-color: #fff;
 }
