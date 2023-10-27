@@ -25,3 +25,32 @@ h3 {
     text-decoration: underline #7a0de0;
     font-size: 50px;
 }
+
+span {
+    list-style: none;
+    text-align: center;
+    font-weight: 500;
+    color: aliceblue;
+    font-size: 30px;
+}
+
+#list1 {
+    text-align: center;
+    font-weight: 500;
+    color: cadetblue;
+    font-size: 20px;
+}
+
+#list2 {
+    text-align: center;
+    font-weight: 500;
+    color: tomato;
+    font-size: 20px;
+}
+
+#list3 {
+    text-align: center;
+    font-weight: 500;
+    color: darkslateblue;
+    font-size: 20px;
+}
