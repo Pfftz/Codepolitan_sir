@@ -1,0 +1,16 @@
+h1 {
+    background-color: bisque;
+    border: 2px solid black;
+    width: 500px;
+    padding: 100px;
+    margin: 50px;
+    display: none;
+}
+
+span {
+    background-color: aqua;
+    border: 2px solid black;
+    width: 500px;
+    padding: 100px;
+    margin: 50px;
+}
