@@ -1,6 +1,11 @@
 div {
     width: 500px;
-    border: 10px yellowgreen solid;
     padding: 20px;
     margin: 20px;
+}
+
+div {
+    border-style: double solid dashed dotted;
+    border-width: 5px 10px 15px 20px;
+    border-color: aquamarine;
 }
