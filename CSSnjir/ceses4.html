@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .jokes p {
+        .jokes>p {
             color: black;
             background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+
+        h2+button {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+
+        input[type="text"] {
+            color: aquamarine;
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px black;
@@ -18,26 +33,36 @@
 
 <body>
     <h1>kumpulan dark jokes</h1>
+    <input type="text" placeholder="search" value=""> <button>search</button>
     <hr>
     <section class="jokes">
         <h3>1. </h3>
         <p>apa bedanya kucing dan kambing?</p>
         <p>kalo kucing diem, kambing diem-diem aja</p>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet excepturi voluptas nisi, minus ipsum nemo
+                sunt maiores, odit commodi deserunt quis, totam unde. Deleniti, voluptas magni possimus soluta fugit
+                iure.</p>
+        </div>
+        <button>vote +</button>
     </section>
     <hr>
     <section class="jokes">
         <h3>2. </h3>
         <p>apa bedanya megawati dan sukarno?</p>
         <p>kalo megawati cwk, sukarno cwk</p>
+        <button>vote +</button>
     </section>
     <hr>
     <section class="jokes">
         <h3>3. </h3>
         <p>apa bedanya kucing dan kambing?</p>
         <p>kalo kucing diem, kambing diem-diem aja</p>
+        <button>vote +</button>
     </section>
     <hr>
     <h2>Jokes ini sangat Hitam</h2>
+    <button>submit wak</button>
 </body>
 
 </html>
