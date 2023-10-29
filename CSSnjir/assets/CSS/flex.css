@@ -9,7 +9,8 @@ h1 {
     margin: 0 auto;
     border: 5px solid greenyellow;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #container > div {
