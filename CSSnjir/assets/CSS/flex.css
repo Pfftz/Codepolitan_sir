@@ -9,12 +9,13 @@ h1 {
     margin: 0 auto;
     border: 5px solid greenyellow;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap-reverse;
 }
 
 #container div {
-    width: 600px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
