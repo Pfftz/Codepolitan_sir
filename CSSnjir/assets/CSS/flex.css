@@ -2,18 +2,19 @@ h1 {
     text-align: center;
 }
 
-#container{
+#container {
     background-color: yellowgreen;
     width: 90%;
-    height: 1500px;
+    height: 500px;
     margin: 0 auto;
     border: 5px solid greenyellow;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
-#container > div {
-   width: 200px;
-   height: 200px;
+#container div {
+    width: 600px;
+    height: 100px;
 }
