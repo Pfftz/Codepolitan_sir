@@ -9,13 +9,33 @@ h1 {
     margin: 0 auto;
     border: 5px solid greenyellow;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap-reverse;
+    align-items: center;
 }
 
 #container div {
     width: 200px;
     height: 200px;
+}
+
+#container div:nth-of-type(1) {
+    align-self: flex-start;
+}
+
+div:nth-of-type(2) {
+    align-self: flex-end;
+}
+
+div:nth-of-type(3) {
+    align-self: center;
+}
+
+div:nth-of-type(4) {
+    align-self: baseline;
+}
+
+div:nth-of-type(5) {
+    align-self: stretch;
 }
