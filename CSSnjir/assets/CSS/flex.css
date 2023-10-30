@@ -5,11 +5,11 @@ h1 {
 #container {
     background-color: yellowgreen;
     width: 90%;
-    height: 500px;
+    /* height: 500px; */
     margin: 0 auto;
     border: 5px solid greenyellow;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -18,17 +18,18 @@ h1 {
 #container div {
     width: 200px;
     height: 200px;
+    flex-basis: 400px;
 }
 
-#container div:nth-of-type(1) {
-    align-self: flex-start;
+div:nth-of-type(1) {
+    flex-shrink: 2;
 }
 
 div:nth-of-type(2) {
-    align-self: flex-end;
+    flex-shrink: 2;
 }
 
-div:nth-of-type(3) {
+/* div:nth-of-type(3) {
     align-self: center;
 }
 
@@ -38,4 +39,4 @@ div:nth-of-type(4) {
 
 div:nth-of-type(5) {
     align-self: stretch;
-}
+} */
