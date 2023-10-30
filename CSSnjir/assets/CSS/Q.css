@@ -10,11 +10,19 @@ h1 {
 
 nav {
     font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul{ 
+    flex-grow: 1;
+    max-width: 50%;
+    justify-content: space-evenly;
 }
 
 ul,
 li {
-    display: inline;
+    display: flex;
     margin: 0;
     padding: 0;
 }
@@ -25,7 +33,27 @@ li {
     }
 } */
 
-@media screen and (min-width: 500px) {
+@media (max-width: 768px) {
+    h1 {
+        font-size: 4em;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+/* materi media query wak */
+/* @media screen and (min-width: 500px) {
     h1 {
         color: blanchedalmond;
         font-size: 20px;
@@ -56,4 +84,4 @@ li {
     body {
         background-color: darkslategray;
     }
-}
+} */
