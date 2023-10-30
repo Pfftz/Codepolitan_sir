@@ -40,3 +40,22 @@ div:nth-of-type(4) {
 div:nth-of-type(5) {
     align-self: stretch;
 } */
+
+main {
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid greenyellow;
+    height: 500px;
+    display: flex;
+}
+
+/* versi ringkasnya wak */
+main .sidebar {
+    background-color: #003049;
+    flex: 1 2 300px;
+}
+
+main .content {
+    background-color: cadetblue;
+    flex: 2 1 800px;
+}
