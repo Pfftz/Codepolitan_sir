@@ -10,13 +10,12 @@
 const password = prompt('Buat password');
 
 if (password.length >= 6) {
-    alert('Password berhasil dibuat!');
+    if (password.indexOf(' ') === -1) {
+        alert('Password tidak boleh mengandung spasi!');
+    } else {
+        alert('Password berhasil dibuat!');
+    }
 } else {
     alert('Password terlalu pendek!');
 }
 
-if (password.indexOf(' ') === -1) {
-    alert('Password tidak boleh mengandung spasi!');
-} else {
-    alert('Password berhasil dibuat!');
-}
