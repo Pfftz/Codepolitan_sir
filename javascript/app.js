@@ -9,13 +9,19 @@
 
 const password = prompt('Buat password');
 
-if (password.length >= 6) {
-    if (password.indexOf(' ') === -1) {
-        console.log('Password berhasil dibuat!');
-    } else {
-        console.log('Password tidak boleh ada spasi!');
-    }
+// if (password.length >= 6) {
+//     if (password.indexOf(' ') === -1) {
+//         console.log('Password berhasil dibuat!');
+//     } else {
+//         console.log('Password tidak boleh ada spasi!');
+//     }
+// } else {
+//     console.log('Password terlalu pendek!');
+// }
+
+if (password.length >= 6 && password.indexOf(' ') === -1) {
+    console.log('Password berhasil dibuat!');
 } else {
-    console.log('Password terlalu pendek!');
+    console.log('Password tidak memenuhi kriteria!');
 }
 
