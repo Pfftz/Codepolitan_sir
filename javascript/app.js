@@ -11,11 +11,11 @@ const password = prompt('Buat password');
 
 if (password.length >= 6) {
     if (password.indexOf(' ') === -1) {
-        alert('Password tidak boleh mengandung spasi!');
+        console.log('Password berhasil dibuat!');
     } else {
-        alert('Password berhasil dibuat!');
+        console.log('Password tidak boleh ada spasi!');
     }
 } else {
-    alert('Password terlalu pendek!');
+    console.log('Password terlalu pendek!');
 }
 
