@@ -37,3 +37,5 @@ else {
     console.log('Anda hanya bisa masuk ke halaman home');
 }
 
+// Path: javascript/app.js
+
