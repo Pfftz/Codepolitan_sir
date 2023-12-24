@@ -26,15 +26,29 @@
 //     console.log('Password tidak memenuhi kriteria!');
 // }
 
-const role = prompt('Masukkan role anda');
+// const role = prompt('Masukkan role anda');
 
-if (role === 'admin' || role === 'editor') {
-    console.log('Anda bisa masuk ke halaman admin dan editor');
-} else if (role === 'user') {
-    console.log('Anda bisa masuk ke halaman user');
-}
-else {
-    console.log('Anda hanya bisa masuk ke halaman home');
+// if (role === 'admin' || role === 'editor') {
+//     console.log('Anda bisa masuk ke halaman admin dan editor');
+// } else if (role === 'user') {
+//     console.log('Anda bisa masuk ke halaman user');
+// }
+// else {
+//     console.log('Anda hanya bisa masuk ke halaman home');
+// }
+
+const studentRow = [
+    ['Andi', 'Budi', 'Caca'],
+    ['Deni', 'Euis', 'Fafa'],
+    ['Gilang', 'Hani', 'Ivan']
+]
+
+for (let i = 0; i < studentRow.length; i++) {
+    const row = studentRow[i];
+    console.log(`Seat Row ${i + 1}`);
+    for (let j = 0; j < row.length; j++) {
+        console.log(`     ${row[j]}`);
+    }
 }
 
 // Path: javascript/app.js
