@@ -60,8 +60,11 @@ const targetNum = Math.floor(Math.random() * maximum) + 1;
 console.log(targetNum);
 
 let guess = parseInt(prompt('Masukkan angka tebakan: '));
+let attempt = 1;
 
 while (guess !== targetNum) {
+    if (guess === 'q') break;
+    attempt++;
     if(guess > targetNum) {
         guess = parseInt(prompt('Tebakan anda terlalu besar, coba lagi: '));
     } else {
@@ -69,7 +72,7 @@ while (guess !== targetNum) {
     }
 }
 
-alert(`Selamat tebakan anda benar! Angka yang dicari adalah ${targetNum}`);
+alert(`Selamat tebakan anda benar! Angka yang dicari adalah ${targetNum} dengan percobaan ${attempt} kali`);
 
 // Path: javascript/app.js
 
