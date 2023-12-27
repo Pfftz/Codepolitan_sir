@@ -75,8 +75,21 @@
 // alert(`Selamat tebakan anda benar! Angka yang dicari adalah ${targetNum} dengan percobaan ${attempt} kali`);
 
 //fungsi judi dadu
-function lemparDadu(){
-    console.log(Math.floor(Math.random() * 6) + 1);
+// function lemparDadu(){
+//     console.log(Math.floor(Math.random() * 6) + 1);
+// }
+
+function duakali(func){
+    func();
+    func();
 }
+
+function lemparDadu(){
+    const hasil = Math.floor(Math.random() * 6) + 1;
+    console.log(hasil);
+}
+
+
+
 
 // Path: javascript/app.js
