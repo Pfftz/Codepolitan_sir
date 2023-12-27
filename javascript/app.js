@@ -51,28 +51,32 @@
 //     }
 // }
 
-let maximum = parseInt(prompt('Masukkan nilai maksimal: '));
-while (!maximum) {
-    maximum = parseInt(prompt('Masukkan nilai maksimal: '));
+// let maximum = parseInt(prompt('Masukkan nilai maksimal: '));
+// while (!maximum) {
+//     maximum = parseInt(prompt('Masukkan nilai maksimal: '));
+// }
+
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
+// console.log(targetNum);
+
+// let guess = parseInt(prompt('Masukkan angka tebakan: '));
+// let attempt = 1;
+
+// while (guess !== targetNum) {
+//     if (guess === 'q') break;
+//     attempt++;
+//     if(guess > targetNum) {
+//         guess = parseInt(prompt('Tebakan anda terlalu besar, coba lagi: '));
+//     } else {
+//         guess = parseInt(prompt('Tebakan anda terlalu kecil, coba lagi: '));
+//     }
+// }
+
+// alert(`Selamat tebakan anda benar! Angka yang dicari adalah ${targetNum} dengan percobaan ${attempt} kali`);
+
+//fungsi judi dadu
+function lemparDadu(){
+    console.log(Math.floor(Math.random() * 6) + 1);
 }
-
-const targetNum = Math.floor(Math.random() * maximum) + 1;
-console.log(targetNum);
-
-let guess = parseInt(prompt('Masukkan angka tebakan: '));
-let attempt = 1;
-
-while (guess !== targetNum) {
-    if (guess === 'q') break;
-    attempt++;
-    if(guess > targetNum) {
-        guess = parseInt(prompt('Tebakan anda terlalu besar, coba lagi: '));
-    } else {
-        guess = parseInt(prompt('Tebakan anda terlalu kecil, coba lagi: '));
-    }
-}
-
-alert(`Selamat tebakan anda benar! Angka yang dicari adalah ${targetNum} dengan percobaan ${attempt} kali`);
 
 // Path: javascript/app.js
-
