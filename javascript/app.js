@@ -94,24 +94,24 @@
 
 // angka.forEach(function (el) {
 //     if (el % 2 === 0) {
-    //         console.log(el);
+//         console.log(el);
 //     }
 // });
 
 const animes = [
-        {
+    {
         judul: 'Naruto',
         rating: 8.5,
         status: 'ongoing'
     },
     {
-            judul: 'One Piece',
-            rating: 9.0,
-            status: 'ongoing'
-        },
-        {
-                judul: 'Bleach',
-                rating: 8.0,
+        judul: 'One Piece',
+        rating: 9.0,
+        status: 'ongoing'
+    },
+    {
+        judul: 'Bleach',
+        rating: 8.0,
         status: 'completed'
     },
     {
@@ -120,19 +120,19 @@ const animes = [
         status: 'completed'
     },
     {
-            judul: 'Dragon Ball',
-            rating: 8.0,
-            status: 'completed'
-        }
-    ];
-    
+        judul: 'Dragon Ball',
+        rating: 8.0,
+        status: 'completed'
+    }
+];
+
 // animes.forEach(function (anime) {
 //     console.log(`${anime.judul} - ${anime.rating}/10 - ${anime.status}`);
 // });
 
 //map
 const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const factorial = angka.map(function (el) {
+const factorial = angka.map((el) => {
     let total = 1;
     for (let i = el; i > 0; i--) {
         total *= i;
@@ -140,7 +140,7 @@ const factorial = angka.map(function (el) {
     return total;
 });
 
-const animek = animes.map(function (anime) {
+const animek = animes.map((anime) => {
     return anime.rating * 10;
 });
 
