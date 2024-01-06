@@ -98,50 +98,64 @@
 //     }
 // });
 
-const animes = [
-    {
-        judul: 'Naruto',
-        rating: 8.5,
-        status: 'ongoing'
-    },
-    {
-        judul: 'One Piece',
-        rating: 9.0,
-        status: 'ongoing'
-    },
-    {
-        judul: 'Bleach',
-        rating: 8.0,
-        status: 'completed'
-    },
-    {
-        judul: 'Death Note',
-        rating: 9.5,
-        status: 'completed'
-    },
-    {
-        judul: 'Dragon Ball',
-        rating: 8.0,
-        status: 'completed'
-    }
-];
+// const animes = [
+//     {
+//         judul: 'Naruto',
+//         rating: 8.5,
+//         status: 'ongoing'
+//     },
+//     {
+//         judul: 'One Piece',
+//         rating: 9.0,
+//         status: 'ongoing'
+//     },
+//     {
+//         judul: 'Bleach',
+//         rating: 8.0,
+//         status: 'completed'
+//     },
+//     {
+//         judul: 'Death Note',
+//         rating: 9.5,
+//         status: 'completed'
+//     },
+//     {
+//         judul: 'Dragon Ball',
+//         rating: 8.0,
+//         status: 'completed'
+//     }
+// ];
 
 // animes.forEach(function (anime) {
 //     console.log(`${anime.judul} - ${anime.rating}/10 - ${anime.status}`);
 // });
 
 //map
-const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const factorial = angka.map((el) => {
-    let total = 1;
-    for (let i = el; i > 0; i--) {
-        total *= i;
-    }
-    return total;
-});
+// const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const factorial = angka.map((el) => {
+//     let total = 1;
+//     for (let i = el; i > 0; i--) {
+//         total *= i;
+//     }
+//     return total;
+// });
 
-const animek = animes.map((anime) => {
-    return anime.rating * 10;
-});
+// const animek = animes.map((anime) => {
+//     return anime.rating * 10;
+// });
+
+//return implisit pada arrow function
+// const random = () => (Math.floor(Math.random() * 6) + 1);
+// const pangkat = (a, b) => (a ** b); 
+
+//settimeout dan setinterval
+console.log('Hello');
+setTimeout(() => {
+    console.log('nigger');
+}, 3000);
+
+const interval = setInterval(() => {
+    console.log("hitam");
+}, 2000);
 
 // Path: javascript/app.js
