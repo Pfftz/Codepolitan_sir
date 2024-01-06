@@ -79,17 +79,55 @@
 //     console.log(Math.floor(Math.random() * 6) + 1);
 // }
 
-function duakali(func){
-    func();
-    func();
-}
+// function duakali(func){
+//     func();
+//     func();
+// }
 
-function lemparDadu(){
-    const hasil = Math.floor(Math.random() * 6) + 1;
-    console.log(hasil);
-}
+// function lemparDadu(){
+//     const hasil = Math.floor(Math.random() * 6) + 1;
+//     console.log(hasil);
+// }
 
+//foreach
+// const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+// angka.forEach(function (el) {
+//     if (el % 2 === 0) {
+//         console.log(el);
+//     }
+// });
 
+const animes = [
+    {
+        judul: 'Naruto',
+        rating: 8.5,
+        status: 'ongoing'
+    },
+    {
+        judul: 'One Piece',
+        rating: 9.0,
+        status: 'ongoing'
+    },
+    {
+        judul: 'Bleach',
+        rating: 8.0,
+        status: 'completed'
+    },
+    {
+        judul: 'Death Note',
+        rating: 9.5,
+        status: 'completed'
+    },
+    {
+        judul: 'Dragon Ball',
+        rating: 8.0,
+        status: 'completed'
+    }
+];
+
+animes.forEach(function (anime) {
+    console.log(`${anime.judul} - ${anime.rating}/10 - ${anime.status}`);
+});
 
 // Path: javascript/app.js
