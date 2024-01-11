@@ -149,13 +149,20 @@
 // const pangkat = (a, b) => (a ** b); 
 
 //settimeout dan setinterval
-console.log('Hello');
-setTimeout(() => {
-    console.log('nigger');
-}, 3000);
+// console.log('Hello');
+// setTimeout(() => {
+//     console.log('nigger');
+// }, 3000);
 
-const interval = setInterval(() => {
-    console.log("hitam");
-}, 2000);
+// const interval = setInterval(() => {
+//     console.log("hitam");
+// }, 2000);
 
+//every && some
+const examScore = [69, 70, 85, 66, 90, 100, 74, 75, 65];
+const isGraduate = examScore.every((score) => score >= 75);
+const isLulus = examScore.some((score) => score >= 75);
+
+const subtotal = [];
+const total = 10;
 // Path: javascript/app.js
