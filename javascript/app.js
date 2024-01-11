@@ -163,6 +163,9 @@ const examScore = [69, 70, 85, 66, 90, 100, 74, 75, 65];
 const isGraduate = examScore.every((score) => score >= 75);
 const isLulus = examScore.some((score) => score >= 75);
 
-const subtotal = [];
-const total = 10;
+const subtotal = [1500, 20000, 40000, 60000, 70000];
+const total = subtotal.reduce((currentTotal, singleSubtotal) => {
+    return currentTotal + singleSubtotal
+})
+
 // Path: javascript/app.js
