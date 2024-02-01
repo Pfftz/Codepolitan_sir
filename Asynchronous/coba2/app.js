@@ -1,3 +1,4 @@
+//CALLBACK HELL EXAMPLE
 // setTimeout(function () {
 //     document.body.style.backgroundColor = 'red';
 //     setTimeout(function () {
@@ -26,5 +27,5 @@ searchMoviesApi('naruto', function (movies) {
     });
 }, () => {
     //if API is down, or request failed
-    
+
 });   

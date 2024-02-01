@@ -88,7 +88,7 @@ async function requestHandler() {
 // 	});
 
 // requestCallback(
-// 	'movie.com',
+// 	'movies.com',
 // 	function (response) {
 // 		console.log('success', response);
 // 		requestCallback(
