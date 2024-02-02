@@ -26,9 +26,14 @@ async function changeColor() {
 	return 'All Done!';
 }
 
-async function printRainbow() {
-	await changeColor();
-	console.log('All Done! Dari printRainbow');
+let counter = 0;
+if (counter === 50) {
+	async function printRainbow() {
+		await changeColor();
+		console.log('All Done! Dari printRainbow');
+	}
 }
-
-setInterval(printRainbow, 7000);
+else {
+	setInterval(printRainbow, counter, 7000);
+	console.log('Counter belum mencapai 50');
+}

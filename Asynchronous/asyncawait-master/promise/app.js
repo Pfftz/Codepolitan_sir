@@ -133,11 +133,11 @@ async function requestHandler() {
 // 	}
 // );
 
-const contohPromise = () => {
-	return new Promise((resolve, reject) => {
-		resolve(() => {
-			console.log('resolve');
-		});
-		// reject(() => { });
-	});
-};
+// const contohPromise = () => {
+// 	return new Promise((resolve, reject) => {
+// 		resolve(() => {
+// 			console.log('resolve');
+// 		});
+// 		// reject(() => { });
+// 	});
+// };
