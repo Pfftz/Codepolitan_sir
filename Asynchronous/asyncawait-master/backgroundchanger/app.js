@@ -31,4 +31,4 @@ async function printRainbow() {
 	console.log('All Done! Dari printRainbow');
 }
 
-printRainbow();
+setInterval(printRainbow, 7000);

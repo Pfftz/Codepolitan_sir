@@ -132,3 +132,12 @@ async function requestHandler() {
 // 		console.log('error', error);
 // 	}
 // );
+
+const contohPromise = () => {
+	return new Promise((resolve, reject) => {
+		resolve(() => {
+			console.log('resolve');
+		});
+		// reject(() => { });
+	});
+};
