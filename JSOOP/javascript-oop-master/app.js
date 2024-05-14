@@ -1,3 +1,5 @@
+// factory function
+
 // function convertColor(r, g, b) {
 // 	const color = {};
 
@@ -17,6 +19,8 @@
 
 // 	return color;
 // }
+
+// constructor function
 
 // function Color(r, g, b) {
 // 	this.r = r;
@@ -131,33 +135,33 @@
 
 // const skyColor = new Color(185, 243, 252, 'Sky');
 
-class Peliharaan {
-	// parent class/object
-	constructor(name, age) {
-		console.log('parent executed');
-		this.name = name;
-		this.age = age;
-	}
-	makan() {
-		return `${this.name} lagi makan`;
-	}
-}
+// class Peliharaan {
+// 	// parent class/object
+// 	constructor(name, age) {
+// 		console.log('parent executed');
+// 		this.name = name;
+// 		this.age = age;
+// 	}
+// 	makan() {
+// 		return `${this.name} lagi makan`;
+// 	}
+// }
 
-class Kucing extends Peliharaan {
-	// child class/object
-	constructor(name, age, lives) {
-		console.log('child executed');
-		super(name, age);
-		this.lives = lives;
-	}
-	meong() {
-		return 'Meeonng!';
-	}
-}
+// class Kucing extends Peliharaan {
+// 	// child class/object
+// 	constructor(name, age, lives) {
+// 		console.log('child executed');
+// 		super(name, age);
+// 		this.lives = lives;
+// 	}
+// 	meong() {
+// 		return 'Meeonng!';
+// 	}
+// }
 
-class Anjing extends Peliharaan {
-	// child class/object
-	gongong() {
-		return 'guk guk!!';
-	}
-}
+// class Anjing extends Peliharaan {
+// 	// child class/object
+// 	gongong() {
+// 		return 'guk guk!!';
+// 	}
+// }
