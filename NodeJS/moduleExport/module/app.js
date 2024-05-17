@@ -1,5 +1,5 @@
 const hitung = require('./rumus');
-const motor = require('../../merkMotor'); // Corrected file path casing
+const motor = require('../../MerkMotor'); // Corrected file path casing
 
 console.log(hitung.penjumlahan(2, 3)); // Output: 5
 console.log(hitung.pengurangan(2, 3)); // Output: -1
