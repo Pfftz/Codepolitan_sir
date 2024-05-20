@@ -14,6 +14,10 @@ app.get("/cats", (req, res) => {
   res.send("MEOW!!");
 });
 
+app.post("/cats", (req, res) => {
+  res.send("This is a POST request!");
+});
+
 app.get("/dogs", (req, res) => {
   res.send("WOOF!!");
 });
