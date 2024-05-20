@@ -33,11 +33,18 @@ app.get("/blog/:judul", (req, res) => {
 
 app.get("/blog/:category/:judul/:author", (req, res) => {
     const { judul, category, author } = req.params;
-    res.send(`Blog dengan kategori: ${category} | Author: ${author} | ${judul}`);
+    res.send(
+        `Blog dengan kategori: ${category} | Author: ${author} | ${judul}`
+    );
 });
 
-app.get('/search', (req, res) => {
-    console.log(req.query);
+app.get("/search", (req, res) => {
+    // console.log(req.query);
+    const { q } = req.query;
+    if (!q) {
+        res.send(`<h1>Nothing found if nothing searched</h1>`);
+    }
+    res.send(`<h1>Search results for: ${q}</h1>`);
 });
 
 app.get("*", (req, res) => {
