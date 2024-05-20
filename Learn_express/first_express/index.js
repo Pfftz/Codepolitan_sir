@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
 
-app.use((req, res) => {
-  console.log("We got a new request!");
-  res.send({ message: "Hello, World!" });
+// app.use((req, res) => {
+//   console.log("We got a new request!");
+//   res.send({ message: "Hello, World!" });
+// });
+
+app.get('/cats', (req, res)=>{
+  res.send
 });
 
 app.listen(8080, () => {
