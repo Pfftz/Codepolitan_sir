@@ -6,8 +6,24 @@ const app = express();
 //   res.send({ message: "Hello, World!" });
 // });
 
-app.get('/cats', (req, res)=>{
-  res.send
+app.get("/", (req, res) => {
+  res.send("Welcome to the home page!");
+});
+
+app.get("/cats", (req, res) => {
+  res.send("MEOW!!");
+});
+
+app.get("/dogs", (req, res) => {
+  res.send("WOOF!!");
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is the about page!");
+});
+
+app.get("*", (req, res) => {
+  res.send("I dont know that path");
 });
 
 app.listen(8080, () => {
