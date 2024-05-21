@@ -14,6 +14,11 @@ app.get('/rand', (req, res) => {
     res.render('random', { num });
 });
 
+app.get('/t/:tag', (req, res) => {
+    const { tag } = req.params;
+    res.render('tag', { tag });
+});
+
 app.listen(8080, () => {
     console.log(`Server started on http://localhost:8080`);
     console.log(`Press Ctrl+C to stop`);
