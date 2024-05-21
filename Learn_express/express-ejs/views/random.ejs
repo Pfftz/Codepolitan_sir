@@ -7,5 +7,12 @@
     </head>
     <body>
         <h1>Random Number: <%= num %></h1>
+        <% if (num % 2 === 0) { %>
+        <h3>Angka Genap</h3>
+        <% } else { %>
+        <h3>Angka Ganjil</h3>
+        <% } %>
+
+        <h3>Angka <%= num %> adalah <%= num % 2 === 0 ? 'genap' : 'ganjil' %></h3>
     </body>
 </html>
