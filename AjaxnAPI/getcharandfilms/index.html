@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starwars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">Starwars Data</a>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Planets in Starwars</h5>
+                        <table class="table" id="planets">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Climate</th>
+                                    <th>Terrain</th>
+                                    <th>Population</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" id="buttonPlanets">Load Data</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">People in Starwars</h5>
+                        <table class="table" id="people">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>Height</th>
+                                    <th>Mass</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" id="buttonPeople">Load Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Species in Starwars</h5>
+                        <table class="table" id="species">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Language</th>
+                                    <th>Classification</th>
+                                    <th>Lifespan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" id="buttonSpecies">Load Data</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Starships in Starwars</h5>
+                        <table class="table" id="starships">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Length</th>
+                                    <th>Crew</th>
+                                    <th>Passengers</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be inserted here -->
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" id="buttonShips">Load Data</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

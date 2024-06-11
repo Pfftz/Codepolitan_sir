@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>TV Show Finder</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+			padding: 50px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+		}
+
+		#search-form {
+			display: flex;
+			justify-content: center;
+			margin-top: 50px;
+		}
+
+		#search-form input[type="text"] {
+			width: 300px;
+			height: 40px;
+			padding: 5px 10px;
+			font-size: 18px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+
+		#search-form button {
+			height: 40px;
+			padding: 5px 20px;
+			margin-left: 10px;
+			font-size: 18px;
+			background-color: #007BFF;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		#search-form button:hover {
+			background-color: #0056b3;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>TV Show Finder</h1>
+
+	<form action="" id="search-form">
+		<input type="text" name="query" id="" placeholder="Enter TV show name..." />
+		<button>Find</button>
+	</form>
+	<br>
+
+	<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
