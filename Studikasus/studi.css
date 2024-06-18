@@ -125,7 +125,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
+    content: "";
     content: none;
 }
 
@@ -228,17 +228,17 @@ body {
     color: white;
 }
 
-@media(min-width: 900px){
-    .panel{
+@media (min-width: 900px) {
+    .panel {
         flex-direction: row;
     }
-    .pricing-plan{
+    .pricing-plan {
         border-bottom: none;
         border-right: 1px solid #e1f1ff;
         padding: 25px 50px;
     }
 
-    .pricing-plan:last-child{
+    .pricing-plan:last-child {
         border-right: none;
     }
 }
