@@ -70,13 +70,13 @@ Movie.deleteMany({ title: "The Dark Knight" }) // Fixed typo from 'tittle' to 't
 
 // Delete a movie by ID
 
-Movie.findByIdAndDelete("6674fc48e25385fbfc68a0ac")
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+// Movie.findByIdAndDelete("6674fc48e25385fbfc68a0ac")
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
 
 // Insert multiple movies
 /*
