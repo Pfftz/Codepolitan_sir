@@ -54,13 +54,13 @@ const changeStock = async (id) => {
     console.log("Stock berhasil diubah.");
 };
 
-Product.closeStore()
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+// Product.closeStore()
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
 
 // changeStock("667c01e992e9d30e9dbbc6ec");
 
