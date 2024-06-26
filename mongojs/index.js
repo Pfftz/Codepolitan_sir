@@ -19,7 +19,24 @@ const movieSchema = new mongoose.Schema({
 
 const Movie = mongoose.model("Movie", movieSchema);
 
-Movie.findOne({ year: { $gte: 2018 }, genre: 'Action' })
+// Movie.findOne({ year: { $gte: 2018 }, genre: 'Action' })
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+// Update Data
+// Movie.updateMany({ year: { $lt: 2019 } }, { rating: 8 })
+//     .then((result) => {
+//         console.log(result);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+Movie.findByIdAndUpdate("6674fc48e25385fbfc68a0ad", { rating: 9 })
     .then((result) => {
         console.log(result);
     })
