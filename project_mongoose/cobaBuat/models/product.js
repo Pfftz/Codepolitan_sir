@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: [true, "nama tidak boleh kosong"],
     },
     brand: {
         type: String,
@@ -17,13 +17,12 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    size: {
+    category: {
         type: String,
-        enum: ["S", "M", "L", "XL"],
+        enum: ["Baju", "Celana", "Aksesoris", "Jaket"],
     },
 });
 
 const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product;
-    
