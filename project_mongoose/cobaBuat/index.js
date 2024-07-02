@@ -3,6 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
+/* Import Product model */
+const Product = require("./models/product");
+
 // Connect to MongoDB
 mongoose
     .connect("mongodb://127.0.0.1/shop_db")
