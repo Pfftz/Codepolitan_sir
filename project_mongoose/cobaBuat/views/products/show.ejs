@@ -11,7 +11,12 @@
             <li>Brand: <%= product.brand %></li>
             <li>color: <%= product.color %></li>
             <li>Price: <%= product.price %></li>
-            <li>Category: <%= product.category %></li>
+            <li>
+                Category:
+                <a href="/products?category=<%= product.category %>">
+                    <%= product.category %>
+                </a>
+            </li>
         </ul>
         <a href="/products">All Products</a>
         <a href="/products/<%= product._id %>/edit">Edit Product</a>
