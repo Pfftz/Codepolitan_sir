@@ -23,21 +23,21 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.get("/seed/place", async (req, res) => {
-    const place = new Place({
-        title: "Empire State Building",
-        price: 1000,
-        description: "This is the baddest building in the world",
-        location: "New York",
-    });
+// app.get("/seed/place", async (req, res) => {
+//     const place = new Place({
+//         title: "Empire State Building",
+//         price: 1000,
+//         description: "This is the baddest building in the world",
+//         location: "New York",
+//     });
 
-    try {
-        const newPlace = await place.save();
-        res.send(newPlace);
-    } catch (err) {
-        res.send(err);
-    }
-});
+//     try {
+//         const newPlace = await place.save();
+//         res.send(newPlace);
+//     } catch (err) {
+//         res.send(err);
+//     }
+// });
 
 app.listen(3000, () => {
     console.log("Server is running on port http://127.0.0.1:3000");
