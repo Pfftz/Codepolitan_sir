@@ -63,6 +63,12 @@ app.put("/places/:id", async (req, res) => {
     res.redirect(`/places/${place.id}`);
 });
 
+app.delete("/places/:id", async (req, res) => {
+    const { id } = req.params;
+    await Place.findByIdAndDelete(id);
+    res.redirect("/places");
+});
+
 // app.get("/seed/place", async (req, res) => {
 //     const place = new Place({
 //         title: "Empire State Building",
