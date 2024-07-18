@@ -1,17 +1,55 @@
 <% layout('layouts/app') %>
-<h1>Add Place</h1>
-<form action="/places" method="POST">
-    <div>
-        <label for="title">Title</label>
-        <input type="text" id="title" name="place[title]" required />
-    </div>
-    <div>
-        <label for="location">Location</label>
-        <input type="text" id="location" name="place[location]" required />
-    </div>
-    <div>
-        <label for="price">Price</label>
-        <input type="text" id="price" name="place[price]" required />
-    </div>
-    <button type="submit">Add Place</button>
-</form>
+<h1 class="text-center">Add Place</h1>
+<div class="col-6 offset-3">
+    <form action="/places" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input
+                type="text"
+                id="title"
+                name="place[title]"
+                class="form-control"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input
+                type="text"
+                id="location"
+                name="place[location]"
+                class="form-control"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea
+                id="description"
+                name="place[description]"
+                class="form-control"
+            ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input
+                type="text"
+                id="price"
+                name="place[price]"
+                class="form-control"
+                required
+            />
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image Url</label>
+            <input
+                type="text"
+                id="image"
+                name="place[image]"
+                class="form-control"
+                required
+            />
+        </div>
+        <button type="submit" class="btn btn-success">Add Place</button>
+    </form>
+</div>
