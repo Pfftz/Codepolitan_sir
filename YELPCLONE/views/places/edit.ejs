@@ -1,7 +1,7 @@
 <% layout('layouts/app') %>
 <h1 class="text-center">Update Place</h1>
 <div class="col-6 offset-3">
-    <form action="/places/<%= place._id %>?_method=PUT" method="POST">
+    <form action="/places/<%= place._id %>?_method=PUT" method="POST" class="validated-form" novalidate>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input
@@ -12,6 +12,8 @@
                 value="<%= place.title %>"
                 required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="mb-3">
             <label for="location" class="form-label">Location</label>
@@ -23,6 +25,8 @@
                 value="<%= place.location %>"
                 required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">description</label>
@@ -33,6 +37,8 @@
             >
 <%= place.title %></textarea
             >
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
@@ -44,6 +50,8 @@
                 value="<%= place.price %>"
                 required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image Url</label>
@@ -55,7 +63,34 @@
                 value="<%= place.image %>"
                 required
             />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <button type="submit" class="btn btn-success">Add Place</button>
     </form>
 </div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".validated-form");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+            form.addEventListener(
+                "submit",
+                (event) => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    form.classList.add("was-validated");
+                },
+                false
+            );
+        });
+    })();
+</script>
