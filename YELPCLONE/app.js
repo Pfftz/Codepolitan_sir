@@ -15,6 +15,7 @@ const Review = require("./models/review");
 
 //schemas
 const { placeSchema } = require("./schemas/place");
+const { reviewSchema } = require("./schemas/review");
 
 //connect to mongodb
 mongoose
@@ -38,7 +39,17 @@ const validatePlace = (req, res, next) => {
     const { error } = placeSchema.validate(req.body);
     if (error) {
         const msg = error.details.map((el) => el.message).join(",");
-        return next(new ErrorHandler(error, 400));
+        return next(new ErrorHandler(msg, 400));
+    } else {
+        next();
+    }
+};
+
+const validateReview = (req, res, next) => {
+    const { error } = reviewSchema.validate(req.body);
+    if (error) {
+        const msg = error.details.map((el) => el.message).join(",");
+        return next(new ErrorHandler(msg, 400));
     } else {
         next();
     }
@@ -73,7 +84,7 @@ app.post(
 app.get(
     "/places/:id",
     wrapAsync(async (req, res) => {
-        const place = await Place.findById(req.params.id);
+        const place = await Place.findById(req.params.id).populate("reviews");
         res.render("places/show", { place });
     })
 );
@@ -107,7 +118,7 @@ app.delete(
 
 app.post(
     "/places/:id/reviews",
-    wrapAsync(async (req, res) => {
+    validateReview, wrapAsync(async (req, res) => {
         const review = new Review(req.body.review);
         const place = await Place.findById(req.params.id);
         place.reviews.push(review);
