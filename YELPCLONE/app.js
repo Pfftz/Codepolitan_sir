@@ -118,13 +118,26 @@ app.delete(
 
 app.post(
     "/places/:id/reviews",
-    validateReview, wrapAsync(async (req, res) => {
+    validateReview,
+    wrapAsync(async (req, res) => {
         const review = new Review(req.body.review);
         const place = await Place.findById(req.params.id);
         place.reviews.push(review);
         await review.save();
         await place.save();
         res.redirect(`/places/${req.params.id}`);
+    })
+);
+
+app.delete(
+    "/places/:place_id/reviews/:review_id",
+    wrapAsync(async (req, res) => {
+        const { place_id, review_id } = req.params;
+        await Place.findByIdAndUpdate(place_id, {
+            $pull: { reviews: review_id },
+        });
+        await Review.findByIdAndDelete(review_id);
+        res.redirect(`/places/${place_id}`);
     })
 );
 
