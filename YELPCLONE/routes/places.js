@@ -61,6 +61,7 @@ router.put(
     wrapAsync(async (req, res) => {
         const { id } = req.params;
         const place = await Place.findByIdAndUpdate(id, { ...req.body.place });
+        req.flash("success_msg", `Successfully edited ${place.title}!`);
         res.redirect(`/places/${place.id}`);
     })
 );
@@ -70,6 +71,7 @@ router.delete(
     wrapAsync(async (req, res) => {
         const { id } = req.params;
         await Place.findByIdAndDelete(id);
+        req.flash("success_msg", "Successfully deleted place!");
         res.redirect("/places");
     })
 );
