@@ -3,7 +3,7 @@ const Place = require("../models/place");
 const { placeSchema } = require("../schemas/place");
 const ErrorHandler = require("../utils/ErrorHandler");
 const wrapAsync = require("../utils/wrapAsync");
-const isValidObjectId = require("../middleware/isValidObjectId");
+const isValidObjectId = require("../middlewares/isValidObjectId");
 
 const router = express.Router();
 
