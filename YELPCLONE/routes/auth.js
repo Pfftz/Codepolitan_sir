@@ -14,9 +14,14 @@ router.post(
         try {
             const { email, username, password } = req.body;
             const user = new User({ email, username });
-            await User.register(user, password);
-            req.flash("success_msg", "Welcome to BestPoints");
-            res.redirect("/login");
+            const registerUser = await User.register(user, password);
+            req.login(registerUser, (err) => {
+                if (err) {
+                    return next(err);
+                }
+                req.flash("success_msg", "Welcome to BestPoints");
+                res.redirect("/places");
+            });
         } catch (err) {
             req.flash("error_msg", err.message);
             res.redirect("/register");
@@ -49,7 +54,7 @@ router.post("/logout", (req, res) => {
             return next(err);
         }
         req.flash("success_msg", "Logged out successfully");
-        res.redirect("/places");
+        res.redirect("/login");
     });
 });
 
