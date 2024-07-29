@@ -5,6 +5,7 @@ const ErrorHandler = require("../utils/ErrorHandler");
 const wrapAsync = require("../utils/wrapAsync");
 const isValidObjectId = require("../middlewares/isValidObjectId");
 const isAuth = require("../middlewares/isAuth");
+const { isAuthorPlace } = require("../middlewares/isAuthor");
 
 const router = express.Router();
 
@@ -46,7 +47,9 @@ router.get(
     "/:id",
     isValidObjectId("/places"),
     wrapAsync(async (req, res) => {
-        const place = await Place.findById(req.params.id).populate("reviews").populate("author");
+        const place = await Place.findById(req.params.id)
+            .populate("reviews")
+            .populate("author");
         res.render("places/show", { place });
     })
 );
@@ -54,6 +57,7 @@ router.get(
 router.get(
     "/:id/edit",
     isAuth,
+    isAuthorPlace,
     isValidObjectId("/places"),
     wrapAsync(async (req, res) => {
         const place = await Place.findById(req.params.id);
@@ -64,15 +68,11 @@ router.get(
 router.put(
     "/:id",
     isAuth,
+    isAuthorPlace,
     isValidObjectId("/places"),
     validatePlace,
     wrapAsync(async (req, res) => {
         const { id, title } = req.params;
-        let place = await Place.findById(id);
-        if (!place.author.equals(req.user._id)) {
-            req.flash("error_msg", "You don't have permission to do that!");
-            return res.redirect(`/places/${id}`);
-        }
         await Place.findByIdAndUpdate(id, { ...req.body.place });
         req.flash("success_msg", `Successfully edited ${title}!`);
         res.redirect(`/places/${id}`);
@@ -82,6 +82,7 @@ router.put(
 router.delete(
     "/:id",
     isAuth,
+    isAuthorPlace,
     isValidObjectId("/places"),
     wrapAsync(async (req, res) => {
         const { id } = req.params;
