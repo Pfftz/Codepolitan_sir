@@ -1,24 +1,13 @@
 const express = require("express");
 const Place = require("../models/place");
 const PlaceController = require("../controllers/place");
-const { placeSchema } = require("../schemas/place");
-const ErrorHandler = require("../utils/ErrorHandler");
 const wrapAsync = require("../utils/wrapAsync");
 const isValidObjectId = require("../middlewares/isValidObjectId");
 const isAuth = require("../middlewares/isAuth");
 const { isAuthorPlace } = require("../middlewares/isAuthor");
+const { validatePlace } = require("../middlewares/validator");
 
 const router = express.Router();
-
-const validatePlace = (req, res, next) => {
-    const { error } = placeSchema.validate(req.body);
-    if (error) {
-        const msg = error.details.map((el) => el.message).join(",");
-        return next(new ErrorHandler(msg, 400));
-    } else {
-        next();
-    }
-};
 
 router
     .route("/")
