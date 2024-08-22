@@ -6,6 +6,7 @@ const isValidObjectId = require("../middlewares/isValidObjectId");
 const isAuth = require("../middlewares/isAuth");
 const { isAuthorPlace } = require("../middlewares/isAuthor");
 const { validatePlace } = require("../middlewares/validator");
+const upload = require("../config/multer");
 
 const router = express.Router();
 
