@@ -1,7 +1,13 @@
 <% layout('layouts/app') %>
 <h1 class="text-center">Update Place</h1>
 <div class="col-6 offset-3">
-    <form action="/places/<%= place._id %>?_method=PUT" method="POST" class="validated-form" novalidate>
+    <form
+        action="/places/<%= place._id %>?_method=PUT"
+        method="POST"
+        class="validated-form"
+        novalidate
+        enctype="multipart/form-data"
+    >
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input
@@ -54,14 +60,14 @@
             <div class="invalid-feedback">Please fill out this field.</div>
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Image Url</label>
+            <label for="image" class="form-label">Image</label>
             <input
-                type="text"
+                type="file"
+                name="image"
                 id="image"
-                name="place[image]"
+                accept="image/*"
                 class="form-control"
-                value="<%= place.image %>"
-                required
+                multiple
             />
             <div class="valid-feedback">Looks good!</div>
             <div class="invalid-feedback">Please fill out this field.</div>
