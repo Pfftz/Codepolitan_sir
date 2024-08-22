@@ -60,7 +60,16 @@ module.exports.update = async (req, res) => {
 
 module.exports.destroy = async (req, res) => {
     const { id } = req.params;
-    await Place.findByIdAndDelete(id);
+    const place = await Place.findById(id);
+
+    if (place.images.length > 0) {
+        place.images.forEach((image) => {
+            fs.unlink(image.url, (err) => new ExpressError(err));
+        });
+    }
+
+    await place.deleteOne();
+
     req.flash("success_msg", "Successfully deleted place!");
     res.redirect("/places");
 };
