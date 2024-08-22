@@ -183,6 +183,10 @@ async function seedPlaces() {
             return {
                 ...place,
                 author: "669fa5b291634cff1e491b18",
+                images: {
+                    url: "public\\images\\image-1724345170012-479960670.jpg",
+                    filename: "image-1724345170012-479960670.jpg",
+                },
             };
         });
         await Place.deleteMany({});

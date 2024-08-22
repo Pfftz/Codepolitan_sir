@@ -73,3 +73,29 @@ module.exports.destroy = async (req, res) => {
     req.flash("success_msg", "Successfully deleted place!");
     res.redirect("/places");
 };
+
+module.exports.destroyImage = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { images } = req.body;
+
+        if (!images || images.length === 0) {
+            req.flash("error_msg", "No images selected to delete!");
+            return res.redirect(`/places/${id}/edit`);
+        }
+
+        images.forEach((image) => {
+            fs.unlinkSync(image);
+        });
+
+        await Place.findByIdAndUpdate(id, {
+            $pull: { images: { url: { $in: images } } },
+        });
+
+        req.flash("success_msg", "Successfully deleted images!");
+        res.redirect(`/places/${id}/edit`);
+    } catch (err) {
+        req.flash("error_msg", "Failed to delete images!");
+        res.redirect(`/places/${id}/edit`);
+    }
+};
