@@ -13,7 +13,12 @@ const router = express.Router();
 router
     .route("/")
     .get(wrapAsync(PlaceController.index))
-    .post(isAuth, validatePlace, wrapAsync(PlaceController.store));
+    .post(
+        isAuth,
+        upload.array("image", 5),
+        validatePlace,
+        wrapAsync(PlaceController.store)
+    );
 
 router.get("/create", isAuth, (req, res) => {
     res.render("places/create");
