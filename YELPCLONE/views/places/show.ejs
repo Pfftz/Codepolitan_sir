@@ -81,6 +81,10 @@
             </div>
         </div>
     </div>
+    <div
+        style="width: 640px; height: 480px; margin-bottom: 5%"
+        id="mapContainer"
+    ></div>
     <% if(currentUser) {%>
     <div class="col-6">
         <h3>Leave a review</h3>
@@ -178,3 +182,28 @@
         <% } %>
     </div>
 </div>
+
+<script>
+    const place = <%- JSON.stringify(place) %>;
+    const placeLocation = {
+        lng: place.geometry.coordinates[0],
+        lat: place.geometry.coordinates[1],
+    };
+</script>
+
+<script>
+    const platform = new H.service.Platform({
+        apikey: `1sNk2GhQwQ0VdXP5f_O6BgM3eHbnDVFU-S3s-MmXBh4`
+    });
+
+    const maptypes = platform.createDefaultLayers();
+
+    const map = new H.Map(
+        document.getElementById("mapContainer"),
+        maptypes.vector.normal.map,
+        {
+            zoom: 10,
+            center: placeLocation,
+        }
+    );
+</script>

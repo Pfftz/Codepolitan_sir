@@ -10,7 +10,6 @@ const path = require("path");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
-const hereMaps = require("./utils/hereMaps");
 const app = express();
 
 //connect to mongodb
@@ -56,10 +55,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", async (req, res) => {
-    const location = "Pantai Kuta, Kuta, Badung, Bali, Indonesia";
-    const reqlocation = await hereMaps.geocode(location);
-    console.log(reqlocation);
+app.get("/", (req, res) => {
     res.render("home");
 });
 
