@@ -4,8 +4,19 @@ const { geometry } = require("../utils/hereMaps");
 const ExpressError = require("../utils/ErrorHandler");
 
 module.exports.index = async (req, res) => {
-    const places = await Place.find({});
-    res.render("places/index", { places });
+    const places = await Place.find();
+    const clusterPlaces = places.map((place) => {
+        return {
+            lat: place.geometry.coordinates[1],
+            lng: place.geometry.coordinates[0],
+        };
+    });
+    const cluster = JSON.stringify(clusterPlaces);
+    res.render("places/index", { places, cluster });
+};
+
+module.exports.create = (req, res) => {
+    res.render("places/create");
 };
 
 module.exports.store = async (req, res, next) => {
@@ -47,7 +58,10 @@ module.exports.update = async (req, res) => {
     const { place } = req.body;
     const { id, title } = req.params;
     const geoData = await geometry(place.location);
-    const newPlace = await Place.findByIdAndUpdate(id, { ...place, geometry: geoData });
+    const newPlace = await Place.findByIdAndUpdate(id, {
+        ...place,
+        geometry: geoData,
+    });
 
     if (req.files && req.files.length > 0) {
         place.images.forEach((image) => {
