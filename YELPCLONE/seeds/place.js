@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Place = require("../models/place");
+const { geometry } = require("../utils/hereMaps");
 
 mongoose
     .connect("mongodb://127.0.0.1/bestpoints")
@@ -145,22 +146,6 @@ async function seedPlaces() {
             image: "https://source.unsplash.com/collection/2349781/1280x720",
         },
         {
-            title: "Taman Safari Indonesia",
-            price: 0,
-            description:
-                "Taman hiburan keluarga dengan berbagai satwa liar di Cisarua, Bogor",
-            location: "Taman Safari Indonesia, Cisarua, West Java",
-            image: "https://source.unsplash.com/collection/2349781/1280x720",
-        },
-        {
-            title: "Gunung Merbabu",
-            price: 50000,
-            description:
-                "Gunung yang terletak di Jawa Tengah dengan pemandangan matahari terbit yang indah",
-            location: "Gunung Merbabu, Central Java",
-            image: "https://source.unsplash.com/collection/2349781/1280x720",
-        },
-        {
             title: "Pulau Lombok",
             price: 0,
             description:
@@ -179,16 +164,26 @@ async function seedPlaces() {
     ];
 
     try {
-        const newPlace = places.map((place) => {
-            return {
-                ...place,
-                author: "669fa5b291634cff1e491b18",
-                images: {
-                    url: "public\\images\\image-1724345170012-479960670.jpg",
-                    filename: "image-1724345170012-479960670.jpg",
-                },
-            };
-        });
+        const newPlace = await Promise.all(
+            places.map(async (place) => {
+                let geoData = await geometry(place.location);
+                if (!geoData) {
+                    geoData = {
+                        type: "Point",
+                        coordinates: [116.32883, -8.90952],
+                    };
+                }
+                return {
+                    ...place,
+                    author: "669fa5b291634cff1e491b18",
+                    images: {
+                        url: "public\\images\\image-1724345170012-479960670.jpg",
+                        filename: "image-1724345170012-479960670.jpg",
+                    },
+                    geometry: geoData,
+                };
+            })
+        );
         await Place.deleteMany({});
         await Place.insertMany(newPlace);
         console.log("Data berhasil disimpan");
