@@ -6,4 +6,8 @@ export class AppController {
     getRootRoute() {
         return "Hello World!";
     }
+    @Get("/contact")
+    getContactPage() {
+        return "Contact Us";
+    }
 }
